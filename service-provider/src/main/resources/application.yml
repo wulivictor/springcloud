@@ -1,5 +1,8 @@
 server:
   port: 7900
+
+debug: true
+
 spring:
   jpa:
     generate-ddl: false #是否生成ddl语句
@@ -12,6 +15,15 @@ spring:
     username: root
     password: 123456
     driver-class-name:  com.mysql.cj.jdbc.Driver
+
+
+eureka:
+  client:                                                   #客户端注册进eureka服务列表内
+    service-url:
+      defaulrZone: localhost:8761/eureka/
+
+
+
 
 logging:
   level:

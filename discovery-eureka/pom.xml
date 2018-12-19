@@ -11,7 +11,7 @@
     <artifactId>discovery-eureka</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>discovery-eureka</name>
-    <description>Demo project for Spring Boot</description>
+    <description>服务器注册和 服务发现   </description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -22,15 +22,8 @@
         <!--增加eureka-server的依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
-        <!--用于测试的，本例可省略-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
     </dependencies>
 
     <build>

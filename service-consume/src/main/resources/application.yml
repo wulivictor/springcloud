@@ -3,5 +3,7 @@ server:
   servlet:
     context-path: /
 
+debug: true
+
 user:
   servicePath: http://localhost:7900/simple/
