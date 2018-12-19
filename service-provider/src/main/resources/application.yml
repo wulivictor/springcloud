@@ -1,0 +1,22 @@
+server:
+  port: 7900
+spring:
+  jpa:
+    generate-ddl: false #是否生成ddl语句
+    show-sql: true   #打印sql
+    database: MYSQL
+    hibernate:
+      ddl-auto: none  #启动不对ddl做处理
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring?useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.itmuch: DEBUG

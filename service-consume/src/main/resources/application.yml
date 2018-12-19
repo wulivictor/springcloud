@@ -1,0 +1,7 @@
+server:
+  port: 7950
+  servlet:
+    context-path: /
+
+user:
+  servicePath: http://localhost:7900/simple/
