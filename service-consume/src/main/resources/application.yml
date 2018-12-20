@@ -5,9 +5,6 @@ server:
 
 debug: true
 
-user:
-  servicePath: http://localhost:7900/simple/
-
 spring:
   application:
     name: service-consume
