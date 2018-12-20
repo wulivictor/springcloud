@@ -12,11 +12,12 @@
     <artifactId>service-provider</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>service-provider</name>
-    <description>Demo project for Spring Boot</description>
+    <description>服务提供者2</description>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
 
     <dependencies>
 
