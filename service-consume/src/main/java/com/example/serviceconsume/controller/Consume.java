@@ -28,7 +28,7 @@ public class Consume {
 
     @GetMapping("/consume/{id}")
     public ResponseEntity<User> findbyId(@PathVariable Long id ){
-        return restTemplate.getForEntity(this.servicePath + id, User.class);
+        return restTemplate.getForEntity("http://SERVICE-PROVIDER/simple/" + id, User.class);
     }
 
 }
