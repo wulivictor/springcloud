@@ -21,6 +21,8 @@
 
         <module>service-consume</module>
 
+        <module>consume-feign</module>
+
         <module>discovery-eureka</module>
     </modules>
 
@@ -39,6 +41,18 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+
+        <!--注册eureka的包 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
     </dependencies>
 
     <dependencyManagement>
@@ -52,6 +66,8 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+
 
 
 </project>
