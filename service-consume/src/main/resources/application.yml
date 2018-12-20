@@ -7,3 +7,15 @@ debug: true
 
 user:
   servicePath: http://localhost:7900/simple/
+
+spring:
+  application:
+    name: service-consume
+
+eureka:
+  client:                                                   #客户端注册进eureka服务列表内
+    service-url:
+      defaulrZone: http://localhost:8761/eureka/
+
+  instance:
+      instance-id: ${spring.application.name}:${server.port}:@project.version@
