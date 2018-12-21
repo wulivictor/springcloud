@@ -16,3 +16,12 @@ eureka:
 
   instance:
       instance-id: ${spring.application.name}:${server.port}:@project.version@
+
+#日志
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.itmuch: DEBUG

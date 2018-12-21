@@ -26,8 +26,8 @@ public class Consume {
 //    @Value("${user.servicePath}")
 //    private String servicePath;
 
-    @GetMapping("/consume/{id}")
-    public ResponseEntity<User> findbyId(@PathVariable Long id ){
+    @GetMapping("/ribbon/{id}")
+    public ResponseEntity<User> findbyId(@PathVariable(value = "id") Long id ){
         //远程调用 RPC
         // SERVICE-PROVIDER   这个东西是 vitural ip  这个虚拟的ip是微服务的服务id，在配置文件中配置的。
         return restTemplate.getForEntity("http://SERVICE-PROVIDER/simple/" + id, User.class);
