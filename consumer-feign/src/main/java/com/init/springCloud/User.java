@@ -1,7 +1,6 @@
 package com.init.springCloud;
 
 import org.springframework.stereotype.Component;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -23,7 +22,6 @@ public class User implements Serializable {
     private short age;
 
     private BigDecimal balance;
-
 
     public Long getId() {
         return id;
