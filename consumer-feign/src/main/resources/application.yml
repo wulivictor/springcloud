@@ -19,5 +19,31 @@ logging:
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
     com.itmuch: DEBUG
 
-
 debug: true
+
+#配置feign
+ribbon:
+    #配置首台服务器重试1次
+    MaxAutoRetries: 1
+    #配置其他服务器重试两次
+    MaxAutoRetriesNextServer: 2
+    #链接超时时间
+    ConnectTimeout: 500
+    #请求处理时间
+    ReadTimeout: 2000
+    #每个操作都开启重试机制
+    OkToRetryOnAllOperations: true
+
+feign.hystrix.enabled: true
+#hystrix 熔断机制
+hystrix:
+  shareSecurityContext: true
+  command:
+    default:
+      circuitBreaker:
+        sleepWindowInMilliseconds: 100000
+        forceClosed: true
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000

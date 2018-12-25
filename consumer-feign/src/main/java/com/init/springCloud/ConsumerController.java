@@ -1,10 +1,8 @@
 package com.init.springCloud;
 
+import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -13,10 +11,18 @@ public class ConsumerController {
     @Autowired
     PersonClient PersonClient;
 
-    @RequestMapping(value = "feign/{id}", method = RequestMethod.GET)
-    public User getUserbyId(@PathVariable(value = "id") Long id) {
-        return PersonClient.getUserById(id);
+    @Autowired
+    PersonClient2 PersonClient2;
 
+    @RequestMapping(value = "/feign/{id}", method = RequestMethod.GET)
+    public User getUserbyId(@PathVariable(value = "id") Long id) {
+        return PersonClient.getUserbyId(id);
+    }
+
+
+    @RequestMapping(value = "/eureka/apps/{serviceName}", method = RequestMethod.GET)
+    public String findServiceInfoFromEurekaByServiceName(@PathVariable String serviceName) {
+        return this.PersonClient2.findmsg(serviceName);
     }
 
 }
