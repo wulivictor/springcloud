@@ -27,9 +27,6 @@ eureka:
   instance:
       instance-id: ${spring.application.name}:${server.port}:@project.version@
 
-
-
-
 logging:
   level:
     root: INFO

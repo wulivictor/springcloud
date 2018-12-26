@@ -33,8 +33,8 @@ public class EurekaConfig2 {
     }
 
     // 访问限权
-    @Bean
-    public BasicAuthRequestInterceptor basicAuthRequestInterceptor() {
-        return new BasicAuthRequestInterceptor("wuli", "pwd123456");
-    }
+//    @Bean
+//    public BasicAuthRequestInterceptor basicAuthRequestInterceptor() {
+//        return new BasicAuthRequestInterceptor("wuli", "pwd123456");
+//    }
 }

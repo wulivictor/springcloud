@@ -10,15 +10,10 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-#日志
+#针对单个feign客户端打印日志
 logging:
   level:
-    root: INFO
-    org.hibernate: INFO
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-    com.itmuch: DEBUG
-
+    com.init.springCloud.PersonClient: DEBUG
 debug: true
 
 #配置feign

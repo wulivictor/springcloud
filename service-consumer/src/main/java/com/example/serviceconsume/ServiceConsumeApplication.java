@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 public class ServiceConsumeApplication {
     @Bean
     @LoadBalanced
-//    loadbalanced 是用来做负载均衡的 加在resttemplate上，那么这个实例的请求就被ribbon代理
+//   loadbalanced 是用来做负载均衡的 加在resttemplate上，那么这个实例的请求就被ribbon代理
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
@@ -20,6 +20,5 @@ public class ServiceConsumeApplication {
     public static void main(String[] args) {
         SpringApplication.run(ServiceConsumeApplication.class, args);
     }
-
 }
 

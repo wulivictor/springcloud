@@ -4,6 +4,8 @@ import com.sun.org.apache.regexp.internal.RE;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 public class ConsumerController {
@@ -17,6 +19,12 @@ public class ConsumerController {
     @RequestMapping(value = "/feign/{id}", method = RequestMethod.GET)
     public User getUserbyId(@PathVariable(value = "id") Long id) {
         return PersonClient.getUserbyId(id);
+    }
+
+
+    @RequestMapping(value = "/feign/userlist", method = RequestMethod.GET)
+    public List<User> getUserlist(){
+        return PersonClient.getAllUserList();
     }
 
 
