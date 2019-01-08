@@ -18,10 +18,10 @@
     <modules>
         <module>service-provider</module>
         <module>service-provider-muti</module>
-
+        <module>ribbon-with-hystrix</module>
         <module>service-consumer</module>
-
         <module>discovery-eureka</module>
+
     </modules>
 
     <properties>

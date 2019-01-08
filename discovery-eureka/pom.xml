@@ -13,6 +13,7 @@
     <name>discovery-eureka</name>
     <description>服务器注册和 服务发现</description>
 
+    <packaging>war</packaging>
     <properties>
         <java.version>1.8</java.version>
     </properties>
