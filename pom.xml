@@ -21,9 +21,9 @@
         <module>ribbon-with-hystrix</module>
         <module>service-consumer</module>
         <module>discovery-eureka</module>
+        <module>feign-with-hystrix</module>
 
     </modules>
-
     <properties>
         <java.version>1.8</java.version>
     </properties>
