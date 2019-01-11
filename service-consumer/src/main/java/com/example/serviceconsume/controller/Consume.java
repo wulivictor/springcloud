@@ -33,5 +33,4 @@ public class Consume {
         return restTemplate.getForEntity("http://SERVICE-PROVIDER/simple/" + id, User.class);
         // restTemplate.patchForObject() 请求 post请求
     }
-
 }

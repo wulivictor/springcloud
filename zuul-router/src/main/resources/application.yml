@@ -1,0 +1,38 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /
+
+debug: true
+
+spring:
+  application:
+    name: zuul-router
+
+eureka:
+  client:                                                   #客户端注册进eureka服务列表内
+    service-url:
+      defaulrZone: http://localhost:8761/eureka/
+
+  instance:
+      instance-id: ${spring.application.name}:${server.port}:@project.version@
+
+#日志
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.example: DEBUG
+
+
+zuul:
+  routes:
+    api-a-url:
+      path: /consume/**
+      url: http://localhost:7950/ribbon/ # 直接链接地址做路由
+
+    api-b-url:
+          path: /api/**
+          service-id: SERVICE-PROVIDER # 使用eukera的 serviceId做路由，负载均衡
