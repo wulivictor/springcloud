@@ -10,18 +10,21 @@ spring:
       url: jdbc:mysql://118.89.48.248:3306/db?useUnicode=true&characterEncoding=utf-8&useSSL=true
       username: root
       password: wl123456
-      initial-size: 1
-      min-idle: 1
-      max-active: 20
-      max-wait: 60000
-      time-between-eviction-runs-millis: 60000
-      min-evictable-idle-time-millis: 300000
-      validation-query: SELECT 'x'
-      test-while-idle: true
-      test-on-borrow: false
-      test-on-return: false
-      pool-prepared-statements: false
-      max-pool-prepared-statement-per-connection-size: 20
+      connectionProperties: druid.stat.mergeSql=true;
+      minIdle: 5
+      validationQuery: SELECT 'x'
+      useGlobalDataSourceStat: true
+      initialSize: 5
+      maxWait: 60000
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      testOnBorrow: false
+      testWhileIdle: true
+      minEvictableIdleTimeMillis: 300000
+      timeBetweenEvictionRunsMillis: 60000
+      testOnReturn: false
+      maxActive: 20
+
   mvc:
     view:
       prefix: /
@@ -35,6 +38,10 @@ pagehelper:
   support-methods-arguments: true
   params: count==countSql
 
+druid:
+  stat:
+    slowSqlMillis: 5000
+
 debug:
   true
 
@@ -42,3 +49,6 @@ debug:
 logging:
   level:
      com.example.mapper : debug
+
+
+
