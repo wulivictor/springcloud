@@ -35,4 +35,13 @@ public class GoodController {
     public int buyGood(){
         return buyService.rushOrder();
     }
+
+
+    @RequestMapping("secKill")
+    public int SecKill (){
+
+        int buycount =(int) Math.round(5*Math.random());
+
+        return this.buyService.secondKill(buycount);
+    }
 }

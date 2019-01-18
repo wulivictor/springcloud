@@ -1,9 +1,10 @@
 package com.example.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoodExample {
+public class GoodExample implements Serializable {
     protected String orderByClause;
 
     protected boolean distinct;

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.mapper.OrderMapper" >
   <resultMap id="BaseResultMap" type="com.example.entity.Order" >
-    <id column="order_id" property="orderId" jdbcType="INTEGER" />
+    <id column="order_id" property="orderId" jdbcType="VARCHAR" />
     <result column="good_id" property="goodId" jdbcType="INTEGER" />
     <result column="order_name" property="orderName" jdbcType="VARCHAR" />
     <result column="order_price" property="orderPrice" jdbcType="INTEGER" />
@@ -85,15 +85,15 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
     from tb_order
-    where order_id = #{orderId,jdbcType=INTEGER}
+    where order_id = #{orderId,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
     delete from tb_order
-    where order_id = #{orderId,jdbcType=INTEGER}
+    where order_id = #{orderId,jdbcType=VARCHAR}
   </delete>
   <delete id="deleteByExample" parameterType="com.example.entity.OrderExample" >
     delete from tb_order
@@ -105,7 +105,7 @@
     insert into tb_order (order_id, good_id, order_name, 
       order_price, good_count, remarks
       )
-    values (#{orderId,jdbcType=INTEGER}, #{goodId,jdbcType=INTEGER}, #{orderName,jdbcType=VARCHAR}, 
+    values (#{orderId,jdbcType=VARCHAR}, #{goodId,jdbcType=INTEGER}, #{orderName,jdbcType=VARCHAR}, 
       #{orderPrice,jdbcType=INTEGER}, #{goodCount,jdbcType=INTEGER}, #{remarks,jdbcType=VARCHAR}
       )
   </insert>
@@ -133,7 +133,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="orderId != null" >
-        #{orderId,jdbcType=INTEGER},
+        #{orderId,jdbcType=VARCHAR},
       </if>
       <if test="goodId != null" >
         #{goodId,jdbcType=INTEGER},
@@ -162,7 +162,7 @@
     update tb_order
     <set >
       <if test="record.orderId != null" >
-        order_id = #{record.orderId,jdbcType=INTEGER},
+        order_id = #{record.orderId,jdbcType=VARCHAR},
       </if>
       <if test="record.goodId != null" >
         good_id = #{record.goodId,jdbcType=INTEGER},
@@ -186,7 +186,7 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update tb_order
-    set order_id = #{record.orderId,jdbcType=INTEGER},
+    set order_id = #{record.orderId,jdbcType=VARCHAR},
       good_id = #{record.goodId,jdbcType=INTEGER},
       order_name = #{record.orderName,jdbcType=VARCHAR},
       order_price = #{record.orderPrice,jdbcType=INTEGER},
@@ -215,7 +215,7 @@
         remarks = #{remarks,jdbcType=VARCHAR},
       </if>
     </set>
-    where order_id = #{orderId,jdbcType=INTEGER}
+    where order_id = #{orderId,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.example.entity.Order" >
     update tb_order
@@ -224,6 +224,6 @@
       order_price = #{orderPrice,jdbcType=INTEGER},
       good_count = #{goodCount,jdbcType=INTEGER},
       remarks = #{remarks,jdbcType=VARCHAR}
-    where order_id = #{orderId,jdbcType=INTEGER}
+    where order_id = #{orderId,jdbcType=VARCHAR}
   </update>
 </mapper>

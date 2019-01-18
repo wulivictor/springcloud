@@ -1,7 +1,9 @@
 package com.example.entity;
 
-public class Order {
-    private Integer orderId;
+import java.io.Serializable;
+
+public class Order implements Serializable {
+    private String orderId;
 
     private Integer goodId;
 
@@ -13,12 +15,12 @@ public class Order {
 
     private String remarks;
 
-    public Integer getOrderId() {
+    public String getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(Integer orderId) {
-        this.orderId = orderId;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId == null ? null : orderId.trim();
     }
 
     public Integer getGoodId() {

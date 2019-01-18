@@ -14,11 +14,12 @@
 <script>
 
     //高并发
-    for (var i = 15000; i > 0; i--) {
-        $.get("buy", function (result) {
+    function post(){
+        $.get("secKill", function (result) {
             console.log(result)
         });
     }
 
+    setInterval(post,10);
 
 </script>

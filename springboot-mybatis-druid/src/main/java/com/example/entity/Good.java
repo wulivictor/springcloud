@@ -1,6 +1,8 @@
 package com.example.entity;
 
-public class Good {
+import java.io.Serializable;
+
+public class Good implements Serializable {
     private Integer goodId;
 
     private String goodName;

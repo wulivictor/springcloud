@@ -1,4 +1,4 @@
-package com.example.config;
+package com.example.druid;
 
 import com.example.serviceconsume.config.RibbonConfiguration;
 import org.springframework.cloud.netflix.ribbon.RibbonClient;
