@@ -20,6 +20,7 @@ public class RedisCount {
     }
 
     private int num = 1000;
+
     private static RedisCount ourInstance = new RedisCount();
 
     public static RedisCount getInstance() {

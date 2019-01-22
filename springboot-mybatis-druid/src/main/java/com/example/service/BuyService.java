@@ -86,7 +86,7 @@ public class BuyService {
      * @return:
      **/
 
-    public synchronized int secondKill(int buycount) {
+    public  int secondKill(int buycount) {
 
 
         RedisCount redisCount = RedisCount.getInstance();
