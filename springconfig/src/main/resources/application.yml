@@ -11,8 +11,8 @@ spring:
       server:
         git:
           password: wl1351698648
-          search-paths: myconfigpath
-          uri: https://github.com/s***w*/myspringcloudconfig
+          search-paths: CommonConfig
+          uri: https://github.com/wulivictor/springcloud
           username: 1351698648@qq.com
         default-application-name: spring-cloud
       label: master
