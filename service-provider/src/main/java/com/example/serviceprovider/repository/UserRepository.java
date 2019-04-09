@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface UserRepository  extends JpaRepository<User,Long> {
 
-    @Query(nativeQuery = true, value = "select * from User where user.id > 0")
+    @Query(nativeQuery = true, value = "select * from user where id > 0")
     public List<User> getUserbysql();
 
 

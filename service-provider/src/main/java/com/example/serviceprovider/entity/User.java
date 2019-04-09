@@ -23,14 +23,14 @@ public class User implements Serializable {
 
     @Column
     private String username;
-    @Column
 
+    @Column
     private String name;
-    @Column
 
+    @Column
     private short age;
-    @Column
 
+    @Column
     private BigDecimal balance;
 
 

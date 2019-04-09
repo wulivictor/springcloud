@@ -1,8 +1,5 @@
 package com.init.springCloud.config;
 
-import com.init.springCloud.ClientFallBack;
-import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RandomRule;
 import feign.Contract;
 import feign.Logger;
 import org.springframework.context.annotation.Bean;

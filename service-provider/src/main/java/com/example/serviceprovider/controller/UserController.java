@@ -29,8 +29,7 @@ public class UserController {
 
     @RequestMapping(value = "/simple/{id}", method = RequestMethod.GET)
     public User getUserById(@PathVariable(value = "id") Long id) {
-        User user = new User();
-        user = this.userRepository.getOne(id);
+        User user = this.userRepository.getOne(id);
         System.out.println(user);
         return user;
     }

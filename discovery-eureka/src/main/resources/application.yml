@@ -1,8 +1,6 @@
 server:
   port: 8761
 
-debug: true
-
 #配置eureka服务器，禁用客户端配置，eureka会将自己也当做成一个客户端
 eureka:
   client:
