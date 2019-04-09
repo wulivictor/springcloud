@@ -22,6 +22,7 @@
         <module>service-consumer</module>
         <module>discovery-eureka</module>
         <module>feign-with-hystrix</module>
+        <module>springconfig</module>
 
     </modules>
     <properties>
